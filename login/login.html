@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LandRecord - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <!-- LEFT SIDE -->
+        <section class="brand-panel">
+
+            <div class="brand">
+                <div class="brand-logo">🌿</div>
+
+                <div>
+                    <h2>LandRecord</h2>
+                    <p>Smart. Secure. Reliable.</p>
+                </div>
+            </div>
+
+            <div class="brand-content">
+                <h1>Digital Land Records Made Simple</h1>
+
+                <p>
+                    Manage, verify and secure land records
+                    with intelligence and transparency.
+                </p>
+            </div>
+
+            <!-- LANDSCAPE -->
+            <div class="landscape">
+
+                <div class="sun"></div>
+
+                <div class="mountain mountain-back"></div>
+                <div class="mountain mountain-front"></div>
+
+                <div class="house">
+                    <div class="roof"></div>
+                    <div class="window window-left"></div>
+                    <div class="window window-right"></div>
+                    <div class="door"></div>
+                </div>
+
+                <div class="field"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="form-panel">
+
+            <div class="login-box">
+
+                <div class="login-heading">
+                    <h1>Welcome Back!</h1>
+                    <p>Login to continue to your account</p>
+                </div>
+
+
+                <form id="loginForm">
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email / Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">♙</span>
+
+                            <input
+                                type="text"
+                                id="email"
+                                placeholder="Enter your email or username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="form-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+
+                        <a href="#" class="forgot-password">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        <span>↪</span>
+                        Login
+                    </button>
+
+                </form>
+
+
+                <!-- DIVIDER -->
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+
+                <!-- SOCIAL LOGIN -->
+                <div class="social-buttons">
+
+                    <button
+                        type="button"
+                        class="social-btn"
+                    >
+                        <strong class="google-icon">G</strong>
+                        Google
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="social-btn"
+                        href="../landing page/landing.html"
+                    >
+
+                        <span class="microsoft-icon">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </span>
+
+                        Microsoft
+
+                    </button>
+
+                </div>
+
+
+                <!-- SIGN UP -->
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="../sign up/signup.html">
+                        Sign up
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="security-footer">
+        🛡️ &nbsp; Your data is 100% secure with us.
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

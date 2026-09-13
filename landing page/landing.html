@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LandVault Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <h2>🌿 LANDVAULT</h2>
+      <p>INTELLIGENT LAND RECORD SYSTEM</p>
+    </div>
+
+    <div class="menu">
+      <button class="active" onclick="showPage('dashboard', this)">▦ &nbsp; Dashboard</button>
+      <button onclick="showPage('documents', this)">▤ &nbsp; Documents</button>
+      <button onclick="showPage('add-record', this)">⊕ &nbsp; Add Record</button>
+      <button onclick="showPage('validation', this)">✓ &nbsp; Validation</button>
+      <button onclick="showPage('map', this)">⌖ &nbsp; Land Map</button>
+      <button onclick="showPage('reports', this)">▥ &nbsp; Reports</button>
+      <button onclick="showPage('users', this)">♙ &nbsp; Users</button>
+      <button onclick="showPage('settings', this)">⚙ &nbsp; Settings</button>
+    </div>
+
+    <div class="support">
+      <strong>◉ Need Help?</strong>
+      <p>Contact Support</p>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="topbar">
+      <div style="display:flex;align-items:center;">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <h1 id="pageHeading">Dashboard</h1>
+      </div>
+
+      <div class="user-info">
+        🔔 &nbsp; <strong>USER</strong> &nbsp; Admin ▾
+      </div>
+    </div>
+
+
+    <div class="content">
+
+      <!-- ================= DASHBOARD ================= -->
+
+      <section class="page active" id="dashboard">
+
+        <div class="stats">
+
+          <div class="card stat-card">
+            <small>Total Records</small>
+            <h2>12,458</h2>
+            <p>+18.6% this month</p>
+          </div>
+
+          <div class="card stat-card">
+            <small>Verified Records</small>
+            <h2>9,652</h2>
+            <p>77.5% of total</p>
+          </div>
+
+          <div class="card stat-card">
+            <small>Under Verification</small>
+            <h2>1,842</h2>
+            <p>14.8% of total</p>
+          </div>
+
+          <div class="card stat-card">
+            <small>Issues Found</small>
+            <h2>964</h2>
+            <p>7.7% of total</p>
+          </div>
+
+        </div>
+
+
+        <div class="section-grid">
+
+          <div class="card">
+            <div class="section-header">
+              <h3>Recent Records</h3>
+              <button class="link-btn"
+                onclick="showPage('documents', document.querySelectorAll('.menu button')[1])">
+                View All →
+              </button>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Record ID</th>
+                    <th>Owner</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Updated</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>LRD-2024-00124</td>
+                    <td>Ramesh Sharma</td>
+                    <td>Village: Bhatoli</td>
+                    <td><span class="status verified">Verified</span></td>
+                    <td>19 May 2024</td>
+                  </tr>
+
+                  <tr>
+                    <td>LRD-2024-00125</td>
+                    <td>Sita Devi</td>
+                    <td>Village: Rampur</td>
+                    <td><span class="status review">Under Review</span></td>
+                    <td>19 May 2024</td>
+                  </tr>
+
+                  <tr>
+                    <td>LRD-2024-00126</td>
+                    <td>Mahesh Kumar</td>
+                    <td>Village: Khajuri</td>
+                    <td><span class="status verified">Verified</span></td>
+                    <td>18 May 2024</td>
+                  </tr>
+
+                  <tr>
+                    <td>LRD-2024-00127</td>
+                    <td>Om Prakash</td>
+                    <td>Village: Bhatoli</td>
+                    <td><span class="status issue">Issue Found</span></td>
+                    <td>18 May 2024</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="section-header">
+              <h3>Record Overview</h3>
+              <small>This Month ▾</small>
+            </div>
+
+            <div class="circle">
+              <div class="circle-inner">
+                <strong>12,458</strong>
+                <small>Total Records</small>
+              </div>
+            </div>
+
+            <div class="legend">
+              🟢 Verified — 9,652<br>
+              🟡 Under Verification — 1,842<br>
+              🔴 Issues Found — 964
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="section-grid">
+
+          <div class="card">
+            <div class="section-header">
+              <h3>Quick Actions</h3>
+            </div>
+
+            <div class="quick-actions">
+
+              <button class="quick-btn"
+                onclick="showPage('add-record', document.querySelectorAll('.menu button')[2])">
+                ＋
+                <strong>Add New Record</strong>
+                <small>Upload and digitize new land record</small>
+              </button>
+
+              <button class="quick-btn"
+                onclick="showPage('validation', document.querySelectorAll('.menu button')[3])">
+                ✓
+                <strong>Validate Record</strong>
+                <small>Validate existing land record</small>
+              </button>
+
+              <button class="quick-btn"
+                onclick="showPage('map', document.querySelectorAll('.menu button')[4])">
+                ⌖
+                <strong>View Land Map</strong>
+                <small>Explore land parcels on map</small>
+              </button>
+
+              <button class="quick-btn"
+                onclick="showPage('reports', document.querySelectorAll('.menu button')[5])">
+                ▥
+                <strong>Generate Report</strong>
+                <small>Download reports and analytics</small>
+              </button>
+
+            </div>
+          </div>
+
+
+          <div class="card">
+            <h3>🛡 Secure. Reliable. Transparent.</h3>
+            <br>
+            <p style="color:#78837e;font-size:12px;line-height:1.7;">
+              Your land record data is protected with secure access,
+              verification and transparent digital record management.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= DOCUMENTS ================= -->
+
+      <section class="page" id="documents">
+
+        <div class="page-title">
+          <h2>Documents</h2>
+          <p>Search, review and manage land records.</p>
+        </div>
+
+        <div class="toolbar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search record, owner or location"
+            onkeyup="searchDocuments()">
+
+          <select id="statusFilter" onchange="filterDocuments()">
+            <option value="all">All Status</option>
+            <option value="Verified">Verified</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Issue Found">Issue Found</option>
+          </select>
+
+          <button class="green-btn"
+            onclick="showPage('add-record', document.querySelectorAll('.menu button')[2])">
+            + Add Record
+          </button>
+        </div>
+
+        <div class="card table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Record ID</th>
+                <th>Owner</th>
+                <th>Location</th>
+                <th>Area</th>
+                <th>Status</th>
+                <th>Updated</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="documentsTable">
+
+              <tr>
+                <td>LRD-2024-00124</td>
+                <td>Ramesh Sharma</td>
+                <td>Bhatoli</td>
+                <td>2.5 Acres</td>
+                <td><span class="status verified">Verified</span></td>
+                <td>19 May 2024</td>
+                <td><button class="link-btn">View</button></td>
+              </tr>
+
+              <tr>
+                <td>LRD-2024-00125</td>
+                <td>Sita Devi</td>
+                <td>Rampur</td>
+                <td>1.8 Acres</td>
+                <td><span class="status review">Under Review</span></td>
+                <td>19 May 2024</td>
+                <td><button class="link-btn">View</button></td>
+              </tr>
+
+              <tr>
+                <td>LRD-2024-00127</td>
+                <td>Om Prakash</td>
+                <td>Bhatoli</td>
+                <td>4.1 Acres</td>
+                <td><span class="status issue">Issue Found</span></td>
+                <td>18 May 2024</td>
+                <td><button class="link-btn">View</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+
+      <!-- ================= ADD RECORD ================= -->
+
+      <section class="page" id="add-record">
+
+        <div class="page-title">
+          <h2>Add New Record</h2>
+          <p>Create and digitize a new land record.</p>
+        </div>
+
+        <form class="card form-card" onsubmit="addRecord(event)">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label>Owner Name</label>
+              <input type="text" id="ownerName" required placeholder="Enter owner name">
+            </div>
+
+            <div class="form-group">
+              <label>Record ID</label>
+              <input type="text" id="recordId" required placeholder="LRD-2026-0001">
+            </div>
+
+            <div class="form-group">
+              <label>Village / Location</label>
+              <input type="text" id="location" required placeholder="Enter location">
+            </div>
+
+            <div class="form-group">
+              <label>Survey Number</label>
+              <input type="text" placeholder="Enter survey number">
+            </div>
+
+            <div class="form-group">
+              <label>Land Area</label>
+              <input type="text" id="landArea" required placeholder="Example: 2.5 Acres">
+            </div>
+
+            <div class="form-group">
+              <label>Land Type</label>
+              <select>
+                <option>Agricultural</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea rows="4" placeholder="Enter additional details"></textarea>
+          </div>
+
+          <div class="upload-box">
+            <strong>⇧ Upload Land Document</strong>
+            <br><br>
+            <small>PDF, JPG or PNG up to 10MB</small>
+            <br><br>
+            <input type="file">
+          </div>
+
+          <button class="green-btn" type="submit">
+            Save Record →
+          </button>
+
+        </form>
+
+      </section>
+
+
+      <!-- ================= VALIDATION ================= -->
+
+      <section class="page" id="validation">
+
+        <div class="page-title">
+          <h2>Validation</h2>
+          <p>Review and verify pending land records.</p>
+        </div>
+
+        <div class="validation-grid">
+
+          <div class="card">
+
+            <div class="section-header">
+              <h3>Pending Verification</h3>
+              <span class="status review">1,842 Records</span>
+            </div>
+
+            <div class="record-item" onclick="showRecord('LRD-2024-00125')">
+              <strong>LRD-2024-00125</strong><br>
+              <small>Sita Devi • Village Rampur</small>
+            </div>
+
+            <div class="record-item" onclick="showRecord('LRD-2024-00129')">
+              <strong>LRD-2024-00129</strong><br>
+              <small>Rajesh Verma • Village Lakshmi</small>
+            </div>
+
+            <div class="record-item" onclick="showRecord('LRD-2024-00130')">
+              <strong>LRD-2024-00130</strong><br>
+              <small>Sunita Kumari • Village Bhatoli</small>
+            </div>
+
+          </div>
+
+
+          <div class="card" id="validationDetails">
+
+            <h3>Select a Record</h3>
+            <br>
+            <p style="color:#7b8580;">
+              Choose a pending record from the list to review its details.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= MAP ================= -->
+
+      <section class="page" id="map">
+
+        <div class="page-title">
+          <h2>Land Map</h2>
+          <p>Explore registered land parcels and boundaries.</p>
+        </div>
+
+        <div class="card">
+
+          <div class="toolbar">
+            <input type="text" placeholder="Search village or survey number">
+            <button class="green-btn">Search</button>
+          </div>
+
+          <div class="map">
+            <div class="land one">Parcel A-102</div>
+            <div class="land two">Parcel A-103</div>
+            <div class="land three">Parcel B-201</div>
+            <div class="land four">Parcel B-202</div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= REPORTS ================= -->
+
+      <section class="page" id="reports">
+
+        <div class="page-title">
+          <h2>Reports & Analytics</h2>
+          <p>Monitor land record activity and performance.</p>
+        </div>
+
+        <div class="report-stats">
+
+          <div class="card report-card">
+            <small>Verification Rate</small>
+            <h2>77.5%</h2>
+            <span style="color:#2c9c50;font-size:11px;">
+              +4.2% vs last month
+            </span>
+          </div>
+
+          <div class="card report-card">
+            <small>Records Added</small>
+            <h2>1,284</h2>
+            <span style="font-size:11px;color:#77827d;">
+              This month
+            </span>
+          </div>
+
+          <div class="card report-card">
+            <small>Issues Resolved</small>
+            <h2>386</h2>
+            <span style="font-size:11px;color:#77827d;">
+              82% resolution rate
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="card" style="margin-top:18px;">
+
+          <div class="section-header">
+            <h3>Records Activity</h3>
+            <small>Last 6 Months</small>
+          </div>
+
+          <div class="chart">
+            <div class="bar" style="height:35%;"></div>
+            <div class="bar" style="height:48%;"></div>
+            <div class="bar" style="height:42%;"></div>
+            <div class="bar" style="height:65%;"></div>
+            <div class="bar" style="height:76%;"></div>
+            <div class="bar" style="height:90%;"></div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= USERS ================= -->
+
+      <section class="page" id="users">
+
+        <div class="page-title">
+          <h2>Users</h2>
+          <p>Manage users and role-based access.</p>
+        </div>
+
+        <button class="green-btn" onclick="alert('Add User feature will be connected to backend.')">
+          + Add User
+        </button>
+
+        <br><br>
+
+        <div class="card table-wrapper">
+
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Last Active</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Ansh Kumar</td>
+                <td>ansh@landvault.com</td>
+                <td>Admin</td>
+                <td><span class="status verified">Active</span></td>
+                <td>Today</td>
+              </tr>
+
+              <tr>
+                <td>Priya Sharma</td>
+                <td>priya@landvault.com</td>
+                <td>Verifier</td>
+                <td><span class="status verified">Active</span></td>
+                <td>Today</td>
+              </tr>
+
+              <tr>
+                <td>Rahul Singh</td>
+                <td>rahul@landvault.com</td>
+                <td>Officer</td>
+                <td><span class="status verified">Active</span></td>
+                <td>Yesterday</td>
+              </tr>
+
+              <tr>
+                <td>Neha Verma</td>
+                <td>neha@landvault.com</td>
+                <td>Viewer</td>
+                <td><span class="status issue">Inactive</span></td>
+                <td>12 Jun 2026</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= SETTINGS ================= -->
+
+      <section class="page" id="settings">
+
+        <div class="page-title">
+          <h2>Settings</h2>
+          <p>Configure your LandVault workspace.</p>
+        </div>
+
+        <div class="settings-grid">
+
+          <div class="card settings-card">
+
+            <h3>General Settings</h3>
+
+            <label>
+              Organization Name
+              <input type="text" value="LandVault">
+            </label>
+
+            <label>
+              Region
+              <select>
+                <option>India</option>
+                <option>Global</option>
+              </select>
+            </label>
+
+            <label>
+              Timezone
+              <select>
+                <option>Asia/Kolkata (IST)</option>
+                <option>UTC</option>
+              </select>
+            </label>
+
+            <br>
+
+            <button class="green-btn" onclick="saveSettings()">
+              Save Changes
+            </button>
+
+          </div>
+
+
+          <div class="card settings-card">
+
+            <h3>Security & Notifications</h3>
+
+            <label>
+              <input type="checkbox" checked>
+              Enable Two-Factor Authentication
+            </label>
+
+            <label>
+              <input type="checkbox" checked>
+              Email Notifications
+            </label>
+
+            <label>
+              <input type="checkbox" checked>
+              Audit Logging
+            </label>
+
+            <br><br>
+
+            <button class="green-btn" onclick="saveSettings()">
+              Save Security Settings
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

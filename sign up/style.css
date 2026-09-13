@@ -1,0 +1,1381 @@
+/* =========================================================
+   LANDRECORD AUTH PAGES
+   Login + Sign Up
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f5f8f6;
+
+    color: #17201c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   MAIN AUTH CARD
+========================================================= */
+
+.auth-container,
+.login-container {
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    min-height: 680px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    box-shadow:
+        0 12px 40px rgba(20, 40, 30, 0.08);
+}
+
+
+/* =========================================================
+   LEFT BRAND PANEL
+========================================================= */
+
+.brand-panel {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 48px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #edf8f1 0%,
+            #e9f6ed 100%
+        );
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+
+    position: relative;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.brand-logo {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 4px 10px rgba(25, 135, 84, 0.18);
+}
+
+
+.brand-info h2,
+.brand h2 {
+
+    color: #176b40;
+
+    font-size: 22px;
+
+    font-weight: 750;
+
+    line-height: 1.1;
+}
+
+
+.brand-info p,
+.brand p {
+
+    color: #69756f;
+
+    font-size: 11px;
+
+    margin-top: 4px;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   LEFT TEXT
+========================================================= */
+
+.brand-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 105px;
+}
+
+
+.brand-content h1 {
+
+    width: 100%;
+
+    max-width: 330px;
+
+    color: #111915;
+
+    font-size: 29px;
+
+    line-height: 1.28;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 17px;
+}
+
+
+.brand-content p {
+
+    width: 100%;
+
+    max-width: 335px;
+
+    color: #69746f;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LANDSCAPE
+========================================================= */
+
+.landscape {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 295px;
+
+    overflow: hidden;
+}
+
+
+/* SUN */
+
+.sun {
+
+    position: absolute;
+
+    width: 74px;
+
+    height: 74px;
+
+    right: 54px;
+
+    top: 23px;
+
+    border-radius: 50%;
+
+    background: #f7e6a4;
+
+    opacity: 0.8;
+}
+
+
+/* BACK MOUNTAIN */
+
+.mountain-back {
+
+    position: absolute;
+
+    left: -35px;
+
+    bottom: 95px;
+
+    width: 120%;
+
+    height: 165px;
+
+    background: #bddac3;
+
+    clip-path: polygon(
+        0 100%,
+        15% 48%,
+        27% 70%,
+        45% 20%,
+        59% 63%,
+        75% 31%,
+        100% 100%
+    );
+}
+
+
+/* FRONT MOUNTAIN */
+
+.mountain-front {
+
+    position: absolute;
+
+    left: -45px;
+
+    bottom: 42px;
+
+    width: 125%;
+
+    height: 155px;
+
+    background: #79b77b;
+
+    clip-path: polygon(
+        0 100%,
+        15% 53%,
+        30% 73%,
+        47% 32%,
+        62% 70%,
+        79% 43%,
+        100% 100%
+    );
+}
+
+
+/* FIELD */
+
+.field {
+
+    position: absolute;
+
+    left: -10%;
+
+    bottom: -55px;
+
+    width: 120%;
+
+    height: 145px;
+
+    background: #4d9c51;
+
+    border-radius:
+        50% 50% 0 0;
+}
+
+
+/* FIELD LINES */
+
+.field::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+
+    top: 43px;
+
+    width: 120%;
+
+    height: 2px;
+
+    background:
+        rgba(255, 255, 255, 0.22);
+
+    transform: rotate(-11deg);
+}
+
+
+.field::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+
+    top: 78px;
+
+    width: 120%;
+
+    height: 2px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform: rotate(-11deg);
+}
+
+
+/* =========================================================
+   HOUSE
+========================================================= */
+
+.house {
+
+    position: absolute;
+
+    z-index: 8;
+
+    left: 49%;
+
+    bottom: 69px;
+
+    width: 102px;
+
+    height: 70px;
+
+    transform: translateX(-50%);
+
+    background: #f3eed7;
+
+    border: 3px solid #48554b;
+}
+
+
+.roof {
+
+    position: absolute;
+
+    left: -11px;
+
+    top: -50px;
+
+    width: 118px;
+
+    height: 66px;
+
+    background: #35463a;
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+.door {
+
+    position: absolute;
+
+    left: 39px;
+
+    bottom: 0;
+
+    width: 23px;
+
+    height: 36px;
+
+    background: #705442;
+}
+
+
+.window {
+
+    position: absolute;
+
+    top: 20px;
+
+    width: 21px;
+
+    height: 21px;
+
+    background: #b9dbe0;
+
+    border: 2px solid #58645b;
+}
+
+
+.window-left {
+    left: 11px;
+}
+
+
+.window-right {
+    right: 11px;
+}
+
+
+/* =========================================================
+   RIGHT LOGIN PANEL
+========================================================= */
+
+.form-panel,
+.signup-panel {
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 55px 70px;
+}
+
+
+.login-box,
+.signup-box {
+
+    width: 100%;
+
+    max-width: 470px;
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.login-heading,
+.signup-heading {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+.login-heading h1,
+.signup-heading h1 {
+
+    color: #121815;
+
+    font-size: 29px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+
+    margin-bottom: 9px;
+}
+
+
+.login-heading p,
+.signup-heading p {
+
+    color: #747d79;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.form-group {
+
+    margin-bottom: 21px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #242b27;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 51px;
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 1px solid #d8ddda;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #17201c;
+
+    font-size: 14px;
+
+    padding:
+        0 45px 0 45px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.input-wrapper input:hover {
+
+    border-color: #c4ccc7;
+}
+
+
+.input-wrapper input:focus {
+
+    border-color: #198754;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(25, 135, 84, 0.09);
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #929996;
+}
+
+
+/* LEFT ICON */
+
+.input-icon {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: #7b8580;
+
+    font-size: 17px;
+
+    pointer-events: none;
+}
+
+
+/* PASSWORD TOGGLE */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #77807c;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    padding: 4px;
+}
+
+
+/* =========================================================
+   LOGIN OPTIONS
+========================================================= */
+
+.form-options {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: -1px;
+
+    margin-bottom: 25px;
+}
+
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #4c5550;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+
+    width: 17px;
+
+    height: 17px;
+
+    accent-color: #198754;
+
+    cursor: pointer;
+}
+
+
+.forgot-password,
+.forgot {
+
+    color: #197448;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.forgot-password:hover,
+.forgot:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.login-btn,
+.signup-submit {
+
+    width: 100%;
+
+    height: 51px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-btn:hover,
+.signup-submit:hover {
+
+    background: #157347;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px
+        rgba(25, 135, 84, 0.18);
+}
+
+
+.login-btn:active,
+.signup-submit:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider,
+.signup-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin:
+        29px 0 19px;
+
+    color: #7c8581;
+
+    font-size: 13px;
+}
+
+
+.divider::before,
+.divider::after,
+.signup-divider::before,
+.signup-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e1e5e3;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.social-buttons,
+.signup-social {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 11px;
+}
+
+
+.social-btn,
+.signup-social-btn {
+
+    height: 49px;
+
+    border: 1px solid #dce1de;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #343b37;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.social-btn:hover,
+.signup-social-btn:hover {
+
+    background: #f8faf9;
+
+    border-color: #bec7c2;
+}
+
+
+/* GOOGLE */
+
+.google-icon,
+.google-g {
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+/* MICROSOFT */
+
+.microsoft-icon,
+.ms-logo {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 8px);
+
+    gap: 2px;
+}
+
+
+.microsoft-icon span,
+.ms-logo i {
+
+    display: block;
+
+    width: 8px;
+
+    height: 8px;
+}
+
+
+.microsoft-icon span:nth-child(1),
+.ms-logo i:nth-child(1) {
+    background: #f25022;
+}
+
+
+.microsoft-icon span:nth-child(2),
+.ms-logo i:nth-child(2) {
+    background: #7fba00;
+}
+
+
+.microsoft-icon span:nth-child(3),
+.ms-logo i:nth-child(3) {
+    background: #00a4ef;
+}
+
+
+.microsoft-icon span:nth-child(4),
+.ms-logo i:nth-child(4) {
+    background: #ffb900;
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP BOTTOM TEXT
+========================================================= */
+
+.signup-text,
+.already-account {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #626b66;
+
+    font-size: 13px;
+}
+
+
+.signup-text a,
+.already-account a {
+
+    color: #197448;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+
+.signup-text a:hover,
+.already-account a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SIGNUP PAGE
+========================================================= */
+
+.signup-panel {
+
+    padding-top: 35px;
+
+    padding-bottom: 35px;
+}
+
+
+.signup-heading {
+
+    margin-bottom: 23px;
+}
+
+
+.signup-field {
+
+    margin-bottom: 13px;
+}
+
+
+.signup-field label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #242b27;
+
+    font-size: 12.5px;
+
+    font-weight: 600;
+}
+
+
+.signup-input {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #d8ddda;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.signup-input:focus-within {
+
+    border-color: #198754;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(25, 135, 84, 0.09);
+}
+
+
+.signup-input > span {
+
+    width: 43px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #7b8580;
+
+    font-size: 16px;
+}
+
+
+.signup-input input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #17201c;
+
+    font-size: 13px;
+
+    padding-right: 42px;
+}
+
+
+.signup-input input::placeholder {
+
+    color: #929996;
+}
+
+
+.show-password {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #77807c;
+
+    cursor: pointer;
+
+    padding: 4px;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-row {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin:
+        3px 0 16px;
+
+    color: #59625e;
+
+    font-size: 11.5px;
+
+    line-height: 1.45;
+
+    cursor: pointer;
+}
+
+
+.terms-row input {
+
+    width: 16px;
+
+    height: 16px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    accent-color: #198754;
+
+    cursor: pointer;
+}
+
+
+.terms-row a {
+
+    color: #197448;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.terms-row a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SECURITY FOOTER
+========================================================= */
+
+.security-footer {
+
+    position: fixed;
+
+    left: 0;
+
+    bottom: 14px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #737c77;
+
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+
+    .auth-container,
+    .login-container {
+
+        max-width: 600px;
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+
+    .brand-panel {
+
+        min-height: 330px;
+
+        padding: 35px;
+    }
+
+
+    .brand-content {
+
+        margin-top: 60px;
+    }
+
+
+    .landscape {
+
+        height: 150px;
+    }
+
+
+    .form-panel,
+    .signup-panel {
+
+        padding:
+            45px 40px 70px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    body {
+
+        padding: 0;
+
+        background: #ffffff;
+    }
+
+
+    .auth-container,
+    .login-container {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+
+    .brand-panel {
+
+        min-height: 285px;
+
+        padding: 28px 25px;
+    }
+
+
+    .brand-content {
+
+        margin-top: 45px;
+    }
+
+
+    .brand-content h1 {
+
+        font-size: 24px;
+
+        max-width: 290px;
+    }
+
+
+    .brand-content p {
+
+        font-size: 14px;
+
+        max-width: 300px;
+    }
+
+
+    .form-panel,
+    .signup-panel {
+
+        padding:
+            40px 25px 75px;
+    }
+
+
+    .login-heading h1,
+    .signup-heading h1 {
+
+        font-size: 26px;
+    }
+
+
+    .social-buttons,
+    .signup-social {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .security-footer {
+
+        font-size: 11px;
+
+        bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .brand-panel {
+
+        min-height: 270px;
+
+        padding: 25px 20px;
+    }
+
+
+    .form-panel,
+    .signup-panel {
+
+        padding:
+            35px 20px 70px;
+    }
+
+
+    .brand-content h1 {
+
+        font-size: 22px;
+    }
+
+
+    .form-options {
+
+        font-size: 12px;
+    }
+
+}
